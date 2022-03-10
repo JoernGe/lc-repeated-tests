@@ -142,4 +142,4 @@ out <- run.jags(model = "repeated_measurements_parallel_tests.bug",
                             "par_se", "par_sp", "prob"),
                 n.chains = 3)
 ```
-- see the reference manual and vignettes for <code>runjags</code> ([here](https://cran.r-project.org/web/packages/runjags/index.html)) or <code>rjags</code> ([here](https://cran.r-project.org/web/packages/rjags/index.html)) for details on running JAGS models in R.
+\- see the reference manual and vignettes for <code>runjags</code> ([here](https://cran.r-project.org/web/packages/runjags/index.html)) or <code>rjags</code> ([here](https://cran.r-project.org/web/packages/rjags/index.html)) for details on running JAGS models in R.
