@@ -89,11 +89,11 @@ The following variables of our model may be included in the list of monitored va
   </tr>
   <tr>
     <td>cop</td>
-    <td>estimated pairwise correlation between tests in the diseased population (matrix of dimension K &#10799; K, here a sctrictly upper triangular matrix, i.e. values on the main diagonal and below are set to zero to omit duplications)</td>
+    <td>estimated pairwise correlation between tests in the diseased population (matrix of dimension K &#10799; K, here a strictly upper triangular matrix, i.e. values on the main diagonal and below are set to zero to omit duplications)</td>
   </tr>
   <tr>
     <td>con</td>
-    <td>estimated pairwise correlation between tests in the non-diseased population (matrix of dimension K &#10799; K, a sctrictly upper triangular matrix like cop</td>
+    <td>estimated pairwise correlation between tests in the non-diseased population (matrix of dimension K &#10799; K, a strictly upper triangular matrix like cop)</td>
   </tr>
   <tr>
     <td>pi</td>
@@ -142,3 +142,4 @@ out <- run.jags(model = "repeated_measurements_parallel_tests.bug",
                             "par_se", "par_sp", "prob"),
                 n.chains = 3)
 ```
+- see the reference manual and vignettes for <code>runjags</code> ([here](https://cran.r-project.org/web/packages/runjags/index.html)) or <code>rjags</code> ([here](https://cran.r-project.org/web/packages/rjags/index.html)) for details on running JAGS models in R.
