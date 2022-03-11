@@ -9,7 +9,7 @@ Our implementation builds on code for a related model without repeated measureme
 Parallel testing means that multiple tests are applied to the same subject and if at least one test gives a positive result, the subject is diagnosed as positive. Thus, for a negative test result, all included tests have to be negative. Such a combination of test results can include multiple tests and/or multiple time points. In our implementation, the number of time points included in a parallel test can not be specified, but our code returns the sensitivity and specificity of a parallel test for 1, 2, ..., J time points, if J gives the maximum number of time points of the study. This behaviour was hard-coded for our purposes to inspect the diagnostic accuracy of parallel tests with increasing numbers of applications.
 
 ## Usage and arguments
-Download the R script into your working directory and run it once in R to create <code>repeated_measurements_parallel_tests.bug</code>. This file is used as input for <code>runjags</code> or <code>rjags</code>.
+Download the R script <code>jags_model_with_parallel_tests.R</code> into your working directory and run it once in R to create <code>repeated_measurements_parallel_tests.bug</code>. This file is used as input for <code>runjags</code> or <code>rjags</code>.
 
 The following arguments have to be specified in R:
 <table>
