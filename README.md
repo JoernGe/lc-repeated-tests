@@ -55,7 +55,7 @@ The following arguments have to be specified in R:
   </tr>
 </table> 
 
-For example, if a study comprised 50 participants with unkown disease status, which were tested at 10 time points using three diagnostic tests, and the diagnostic accuracy of repeated applications of Test 1 should be evaluated over time, the arguments could be specified in R in the following way:
+For example, if a study comprised 50 participants with unknown disease status, which were tested at 10 time points using three diagnostic tests, and the diagnostic accuracy of repeated applications of Test 1 should be evaluated over time, the arguments could be specified in R in the following way:
 
 ```r
 comb_mat <- matrix(c(1, 0, 0), nrow = 1, ncol = 3)
