@@ -152,4 +152,7 @@ out <- run.jags(model = "repeated_measurements_parallel_tests.bug",
 
 ## References
 
-- 
+- Wang C, Hanson TE. Estimation of sensitivity and specificity of multiple repeated binary tests without a gold standard. *Statistics in Medicine.* 2019;38:2381–2390. doi: [10.1002/sim.8114](https://doi.org/10.1002/sim.8114)
+- Wang C, Lin X, Nelson KP. Bayesian hierarchical latent class models for estimating diagnostic accuracy. *Statistical Methods in Medical Research.* 2020;29(4):1112-1128. doi: [10.1177/0962280219852649](https://doi.org/10.1177/0962280219852649)
+- Denwood MJ. runjags: An R Package Providing Interface Utilities, Model Templates, Parallel Computing Methods and Additional Distributions for MCMC Models in JAGS. *Journal of Statistical Software.* 2016;71(9):1-25. doi: [10.18637/jss.v071.i09](https://doi.org/10.18637/jss.v071.i09)
+- Plummer M. rjags: Bayesian Graphical Models using MCMC. R package version 4-10. 2019. Available at: [https://CRAN.R-project.org/package=rjags](https://CRAN.R-project.org/package=rjags)
