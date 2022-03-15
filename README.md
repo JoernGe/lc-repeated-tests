@@ -1,15 +1,15 @@
 ## About this repository
-This repository contains an R script for a latent class model to estimate sensitivity and specificity of multiple repeated diagnostic tests, as it was used for the publication by Wichert et al. ... The R script consists mainly of the JAGS model and can be run in R via <code>runjags</code> or <code>rjags</code>, for example.
+This repository contains an R script for a latent class model to estimate sensitivity and specificity of multiple repeated diagnostic tests, as it was used for the publication by Wichert et al. ... The R script consists of the JAGS model and can be run in R via <code>runjags</code> or <code>rjags</code>, for example.
 
 ## About the model
 This latent class model was proposed by Wang and Hanson in 2019 to estimate sensitivity and specificity of multiple diagnostic tests, which are applied repeatedly to the same subjects, if a gold standard is not or only partially available (doi: [10.1002/sim.8114](https://doi.org/10.1002/sim.8114)). 
 
 Our implementation builds on code for a related model without repeated measurements (Wang, Lin &amp; Nelson 2020, doi: [10.1177/0962280219852649](https://doi.org/10.1177/0962280219852649), model M2). We adapted the code to repeated tests in accordance with the definition by Wang &amp; Hanson (2019). To estimate sensitivity and specificity of test combinations, we further expanded the model to parallel testing, as described in Wang &amp; Hanson (2019). 
 
-Parallel testing means that multiple tests are applied to the same subject and if at least one test gives a positive result, the subject is diagnosed as positive. Thus, for a negative test result, all included tests have to be negative. Such a combination of test results can include multiple tests and/or multiple time points. In our implementation, the number of time points included in a parallel test can not be specified, but our code returns the sensitivity and specificity of a parallel test for 1, 2, ..., J time points, if J gives the maximum number of time points of the study. This behaviour was hard-coded for our purposes to inspect the diagnostic accuracy of parallel tests with increasing numbers of applications.
+Parallel testing means that multiple tests are applied to the same subject and if at least one test gives a positive result, the subject is diagnosed as positive. Thus, for a negative result of a parallel test, all included tests have to be negative. Such a combination of test results can include multiple tests and/or multiple time points. In our implementation, the number of time points included in a parallel test can not be specified, but our code returns the sensitivity and specificity of a parallel test for 1, 2, ..., J time points, if J gives the maximum number of time points of the study. This behaviour was hard-coded for our purposes to inspect the diagnostic accuracy of parallel tests with increasing numbers of applications.
 
 ## Usage and arguments
-Download the R script into your working directory and run it once in R to create <code>repeated_measurements_parallel_tests.bug</code>. This file is used as input for <code>runjags</code> or <code>rjags</code>.
+Download the R script <code>jags_model_with_parallel_tests.R</code> into your working directory and run it once in R to create <code>repeated_measurements_parallel_tests.bug</code>. This file is used as input for <code>runjags</code> or <code>rjags</code>.
 
 The following arguments have to be specified in R:
 <table>
@@ -55,7 +55,7 @@ The following arguments have to be specified in R:
   </tr>
 </table> 
 
-For example, if a study comprised 50 participants with unkown disease status, which were tested at 10 time points using three diagnostic tests, and the diagnostic accuracy of repeated applications of Test 1 should be evaluated over time, the arguments could be specified in R in the following way:
+For example, if a study comprised 50 participants with unknown disease status, which were tested at 10 time points using three diagnostic tests, and the diagnostic accuracy of repeated applications of Test 1 should be evaluated over time, the arguments could be specified in R in the following way:
 
 ```r
 comb_mat <- matrix(c(1, 0, 0), nrow = 1, ncol = 3)
