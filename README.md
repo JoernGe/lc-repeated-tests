@@ -110,19 +110,19 @@ The following variables of our model may be included in the list of monitored va
   </tr>
   <tr>
     <td>omega1</td>
-    <td>mode of beta distribution of test sensitivities (see Wang, Lin &amp; Nelson (2020))</td>
+    <td>mode of beta distribution of test sensitivities (see Wang, Lin &amp; Nelson, 2020)</td>
   </tr>
   <tr>
     <td>omega2</td>
-    <td>mode of beta distribution of test specificities (see Wang, Lin &amp; Nelson (2020))</td>
+    <td>mode of beta distribution of test specificities (see Wang, Lin &amp; Nelson, 2020)</td>
   </tr>
   <tr>
     <td>kappa1</td>
-    <td>spread of beta distribution of test sensitivities (see Wang, Lin &amp; Nelson (2020))</td>
+    <td>spread of beta distribution of test sensitivities (see Wang, Lin &amp; Nelson, 2020)</td>
   </tr>
   <tr>
     <td>kappa2</td>
-    <td>spread of beta distribution of test specificities (see Wang, Lin &amp; Nelson (2020))</td>
+    <td>spread of beta distribution of test specificities (see Wang, Lin &amp; Nelson, 2020)</td>
   </tr>
   <tr>
     <td>par_se</td>
@@ -149,3 +149,7 @@ out <- run.jags(model = "repeated_measurements_parallel_tests.bug",
 ```
 
 \- see the reference manual and vignettes for <code>runjags</code> ([here](https://cran.r-project.org/web/packages/runjags/index.html)) or <code>rjags</code> ([here](https://cran.r-project.org/web/packages/rjags/index.html)) for details on running JAGS models in R.
+
+## References
+
+- 
