@@ -6,7 +6,7 @@ This latent class model was proposed by Wang and Hanson in 2019 to estimate sens
 
 Our implementation builds on code for a related model without repeated measurements (Wang, Lin &amp; Nelson 2020, doi: [10.1177/0962280219852649](https://doi.org/10.1177/0962280219852649), model M2). We adapted the code to repeated tests in accordance with the definition by Wang &amp; Hanson (2019). To estimate sensitivity and specificity of test combinations, we further expanded the model to parallel testing, as described in Wang &amp; Hanson (2019). 
 
-Parallel testing means that multiple tests are applied to the same subject and if at least one test gives a positive result, the subject is diagnosed as positive. Thus, for a negative result of a parallel test, all included tests have to be negative. Such a combination of test results can include multiple tests and/or multiple time points. In our implementation, the number of time points included in a parallel test can not be specified, but our code returns the sensitivity and specificity of a parallel test for 1, 2, ..., J time points, if J gives the maximum number of time points of the study. This behaviour was hard-coded for our purposes to inspect the diagnostic accuracy of parallel tests with increasing numbers of applications.
+Parallel testing means that multiple tests are applied to the same subject and if at least one test gives a positive result, the parallel test is evaluated as positive. Thus, for a negative result of a parallel test, all included tests have to be negative. Such a combination of test results can include multiple tests and / or multiple time points. In our implementation, the number of time points included in a parallel test can not be specified, but our code returns the sensitivity and specificity of a parallel test for 1, 2, ..., J time points, with J being the maximum number of time points of the study. This behaviour was hard-coded for our purposes to inspect the diagnostic accuracy of parallel tests with increasing numbers of applications.
 
 ## Usage and arguments
 Download the R script <code>jags_model_with_parallel_tests.R</code> into your working directory and run it once in R to create <code>repeated_measurements_parallel_tests.bug</code>. This file is used as input for <code>runjags</code> or <code>rjags</code>.
@@ -55,7 +55,7 @@ The following arguments have to be specified in R:
   </tr>
 </table> 
 
-For example, if a study comprised 50 participants with unknown disease status, which were tested at 10 time points using three diagnostic tests, and the diagnostic accuracy of repeated applications of Test 1 should be evaluated over time, the arguments could be specified in R in the following way:
+For example, if a study comprised 50 participants with unknown disease status, which were tested at 10 time points using three diagnostic tests, and the diagnostic accuracy of repeated applications of Test 1 interpreted in parallel should be evaluated over time, the arguments could be specified in R in the following way:
 
 ```r
 comb_mat <- matrix(c(1, 0, 0), nrow = 1, ncol = 3)
@@ -71,6 +71,7 @@ list_data <- list("K" = 3,
                   "z2" = matrix(0, nrow = nrow(comb_mat), ncol = 10),
                   "z3" = matrix(0, nrow = nrow(comb_mat), ncol = 10))
 ```
+
 We assume here that the test results are stored in <code>data_array</code>. If parallel tests are not required, parameter <code>ncomb</code> can simply be set to zero to suppress calculations for parallel tests.
 
 The following variables of our model may be included in the list of monitored variables:
@@ -146,4 +147,5 @@ out <- run.jags(model = "repeated_measurements_parallel_tests.bug",
                             "par_se", "par_sp", "prob"),
                 n.chains = 3)
 ```
+
 \- see the reference manual and vignettes for <code>runjags</code> ([here](https://cran.r-project.org/web/packages/runjags/index.html)) or <code>rjags</code> ([here](https://cran.r-project.org/web/packages/rjags/index.html)) for details on running JAGS models in R.
