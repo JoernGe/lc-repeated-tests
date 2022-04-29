@@ -1,5 +1,5 @@
 ## About this repository
-This repository contains an R script for a latent class model to estimate sensitivity and specificity of multiple repeated diagnostic tests, as it was used for the publication by Wichert et al. ... The R script consists of the JAGS model and can be run in R via <code>runjags</code> or <code>rjags</code>, for example.
+This repository contains an R script for a latent class model to estimate sensitivity and specificity of multiple repeated diagnostic tests, as it was used for the publication by Wichert et al. "Detection of low MAP shedder prevalence in large free-stall dairy herds by repeated testing of environmental samples and pooled milk samples" (submitted). The R script consists of the JAGS model and can be run in R via <code>runjags</code> or <code>rjags</code>, for example.
 
 ## About the model
 This latent class model was proposed by Wang and Hanson in 2019 to estimate sensitivity and specificity of multiple diagnostic tests, which are applied repeatedly to the same subjects, if a gold standard is not or only partially available (doi: [10.1002/sim.8114](https://doi.org/10.1002/sim.8114)). 
